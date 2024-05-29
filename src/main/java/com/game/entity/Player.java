@@ -7,9 +7,11 @@ import java.util.Date;
 
 @Entity
 @Table(name = "player", schema = "rpg")
+@NamedQuery(name = "player_getAllCount", query = "select count(*) from Player")
 public class Player {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
     private Long id;
 
